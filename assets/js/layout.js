@@ -11,7 +11,7 @@ document.body.insertAdjacentHTML("afterbegin", `
     <div class="menu-title">产品文档目录</div>
 
     <div class="menu">
-        <a href="/pages/主页/">首页简介</a>
+        <a href="/pages/home/">首页简介</a>
         <a href="/pages/ws40/">微闪4.0安装包/源码</a>
         <a href="/pages/ws502/">微闪5.02安装包/源码</a>
         <a href="/pages/ws602/">微闪6.02安装包/源码</a>
