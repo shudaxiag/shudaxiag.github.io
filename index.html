@@ -1,60 +1,217 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>鼠大侠 - 尊享服务</title>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/antd@4.24.16/dist/antd.min.css">
+
 <style>
-body{margin:0;background:#f3f6f9;color:#1f2937;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial}
-.top{height:64px;background:#fff;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;padding:0 36px;position:fixed;top:0;left:0;right:0;z-index:10}
-.logo{font-size:24px;font-weight:800;color:#0f766e;margin-right:24px}
-.desc{color:#64748b}
-.layout{display:flex;padding-top:64px}
-.side{width:260px;background:#fff;border-right:1px solid #e5e7eb;height:calc(100vh - 64px);position:fixed;left:0;top:64px;padding:18px 0}
-.side-title{font-weight:700;padding:0 24px 14px;color:#0f172a}
-.menu a{display:block;padding:13px 24px;color:#334155;text-decoration:none;border-left:4px solid transparent}
-.menu a:hover,.menu a.active{background:#e6fffb;color:#08979c;border-left-color:#13c2c2;font-weight:600}
-.main{margin-left:260px;padding:34px 48px;width:calc(100% - 260px)}
-.hero{background:linear-gradient(120deg,#e6fffb,#ffffff);border-radius:16px;padding:42px;border:1px solid #d9f7be;margin-bottom:24px}
-.hero h1{font-size:34px;font-weight:800;margin-bottom:14px;color:#0f172a}
-.hero p{font-size:16px;line-height:1.9;color:#475569;max-width:900px}
-.card{background:#fff;border-radius:14px;padding:30px;border:1px solid #e5e7eb;box-shadow:0 8px 24px rgba(15,23,42,.04)}
-.product-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #f0f0f0;padding-bottom:20px;margin-bottom:24px}
-.product-title{font-size:30px;font-weight:800;color:#0f172a}
-.badge{background:#e6fffb;color:#08979c;border:1px solid #87e8de;padding:5px 12px;border-radius:20px;margin-right:8px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:24px}
-.item{background:#fafafa;border:1px solid #f0f0f0;border-radius:12px;padding:22px}
-.item h3{font-size:17px;font-weight:700;margin-bottom:8px}
-.item p{color:#64748b;line-height:1.8}
-.imgbox{height:230px;background:#f8fafc;border:1px dashed #cbd5e1;border-radius:12px;margin-top:24px;display:flex;align-items:center;justify-content:center;color:#94a3b8}
-.btns{margin-top:24px}
-.btn{display:inline-block;background:#13c2c2;color:white;padding:10px 22px;border-radius:6px;text-decoration:none;margin-right:12px}
-.btn:hover{color:white;background:#08979c}
-.btn.gray{background:#64748b}
-.footer-note{margin-top:20px;color:#94a3b8}
-@media(max-width:900px){.side{display:none}.main{margin-left:0;width:100%;padding:24px}.grid{grid-template-columns:1fr}.top{padding:0 18px}.desc{display:none}}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#f5f5f5;
+  color:#1f2937;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif;
+}
+.header{
+  height:56px;
+  background:#fff;
+  border-bottom:1px solid #e5e7eb;
+  display:flex;
+  align-items:center;
+  padding:0 28px;
+  position:fixed;
+  left:0;
+  top:0;
+  right:0;
+  z-index:99;
+}
+.logo{
+  font-size:18px;
+  font-weight:700;
+  color:#111827;
+  margin-right:20px;
+}
+.desc{
+  font-size:13px;
+  color:#6b7280;
+}
+.layout{
+  display:flex;
+  padding-top:56px;
+}
+.sidebar{
+  width:250px;
+  height:calc(100vh - 56px);
+  background:#fff;
+  border-right:1px solid #e5e7eb;
+  position:fixed;
+  left:0;
+  top:56px;
+  padding:14px 10px;
+}
+.side-title{
+  font-size:13px;
+  font-weight:600;
+  color:#111827;
+  padding:8px 12px 12px;
+}
+.menu a{
+  display:block;
+  height:34px;
+  line-height:34px;
+  padding:0 12px;
+  margin:2px 0;
+  border-radius:6px;
+  color:#374151;
+  font-size:13px;
+  text-decoration:none;
+}
+.menu a:hover{
+  background:#f3f4f6;
+  color:#111827;
+}
+.menu a.active{
+  background:#e5e7eb;
+  color:#111827;
+  font-weight:600;
+}
+.main{
+  margin-left:250px;
+  width:calc(100% - 250px);
+  padding:28px 42px;
+}
+.hero{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  padding:32px;
+  margin-bottom:18px;
+}
+.hero h1{
+  font-size:28px;
+  font-weight:700;
+  color:#111827;
+  margin-bottom:12px;
+}
+.hero p{
+  max-width:920px;
+  color:#4b5563;
+  font-size:14px;
+  line-height:1.9;
+}
+.tag{
+  display:inline-block;
+  padding:2px 9px;
+  border:1px solid #d1d5db;
+  border-radius:12px;
+  color:#4b5563;
+  background:#fafafa;
+  font-size:12px;
+  margin-right:6px;
+  margin-top:10px;
+}
+.card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  padding:26px;
+}
+.card-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-bottom:18px;
+  border-bottom:1px solid #f0f0f0;
+}
+.card-title{
+  font-size:24px;
+  font-weight:700;
+  color:#111827;
+}
+.card-desc{
+  margin-top:8px;
+  font-size:13px;
+  color:#6b7280;
+}
+.ant-btn{
+  height:30px;
+  padding:0 12px;
+  font-size:12px;
+  border-radius:5px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:20px;
+}
+.feature{
+  border:1px solid #e5e7eb;
+  border-radius:8px;
+  padding:18px;
+  background:#fff;
+}
+.feature h3{
+  font-size:15px;
+  font-weight:600;
+  color:#111827;
+  margin-bottom:8px;
+}
+.feature p{
+  font-size:13px;
+  color:#6b7280;
+  line-height:1.8;
+  margin:0;
+}
+.image-box{
+  height:220px;
+  border:1px dashed #d1d5db;
+  border-radius:8px;
+  background:#fafafa;
+  margin-top:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#9ca3af;
+  font-size:13px;
+}
+.btn-group{
+  margin-top:18px;
+}
+.btn-group .ant-btn{
+  margin-right:8px;
+}
+@media(max-width:900px){
+  .sidebar{display:none}
+  .main{margin-left:0;width:100%;padding:20px}
+  .grid{grid-template-columns:1fr}
+  .desc{display:none}
+}
 </style>
 </head>
+
 <body>
 
-<div class="top">
+<div class="header">
   <div class="logo">鼠大侠 - 尊享服务</div>
   <div class="desc">全栈开发工程师 · 软件开发 · 网站二开 · 自动化工具 · 授权系统</div>
 </div>
 
 <div class="layout">
-  <aside class="side">
+  <aside class="sidebar">
     <div class="side-title">产品文档目录</div>
     <nav class="menu" id="menu">
       <a href="#home">首页简介</a>
-      <a href="#ws40">微闪4.0</a>
-      <a href="#ws502">微闪5.02</a>
-      <a href="#ws602">微闪6.02</a>
-      <a href="#api91">91 数据API发送控台</a>
-      <a href="#chaidan">拆单助手桌面版</a>
-      <a href="#imgconvert">图片转换器</a>
-      <a href="#texttool">文本去重复</a>
+      <a href="#ws40">微闪4.0安装包/源码</a>
+      <a href="#ws502">微闪5.02安装包/源码</a>
+      <a href="#ws602">微闪6.02安装包/源码</a>
+      <a href="#api91">91数据发送安装包/源码</a>
+      <a href="#chaidan">拆单助手 - 鼠大侠</a>
+      <a href="#imgconvert">图片转换器 - 鼠大侠</a>
+      <a href="#texttool">文本去重复 - 鼠大侠</a>
     </nav>
   </aside>
 
@@ -63,92 +220,92 @@ body{margin:0;background:#f3f6f9;color:#1f2937;font-family:-apple-system,BlinkMa
 
 <script>
 const pages = {
-  home: {
-    title: "鼠大侠 - 尊享服务",
-    intro: "全栈开发工程师 | 承接安卓APP定制、PC桌面软件开发、网站二开及系统集成。精通易语言、C#、Kotlin、PHP，专注于自动化工具与软件授权系统解决方案。",
-    tags: ["安卓APP定制", "PC桌面软件", "网站二开", "系统集成"],
-    features: [
-      ["全栈开发", "从前端页面、后台接口、数据库到客户端软件，提供完整开发方案。"],
-      ["软件授权系统", "支持卡密、账号、机器码、心跳检测、在线状态、黑名单等功能。"],
-      ["自动化工具", "根据业务流程定制自动化软件，提高效率，减少人工操作。"],
-      ["长期维护", "可按需求持续升级功能、修复问题、优化体验。"]
+  home:{
+    title:"鼠大侠 - 尊享服务",
+    intro:"全栈开发工程师 | 承接安卓APP定制、PC桌面软件开发、网站二开及系统集成。精通易语言、C#、Kotlin、PHP，专注于自动化工具与软件授权系统解决方案。",
+    tags:["安卓APP定制","PC桌面软件","网站二开","系统集成"],
+    features:[
+      ["全栈开发","支持前端页面、后台接口、数据库、客户端软件等完整开发。"],
+      ["软件授权系统","支持卡密、账号、机器码、心跳检测、黑名单等功能。"],
+      ["自动化工具","根据业务流程定制工具，提升效率，减少重复操作。"],
+      ["长期维护","支持功能升级、问题修复、界面优化与部署协助。"]
     ]
   },
-  ws40: {
-    title: "微闪4.0",
-    intro: "微闪4.0 是一款面向指定场景的工具软件，主打稳定、易用、高效，适合日常自动化辅助使用。",
-    tags: ["稳定运行", "简单易用", "授权验证", "教程支持"],
-    features: [
-      ["软件介绍", "这里填写微闪4.0的核心功能、适用人群、使用场景。"],
-      ["功能亮点", "这里写主要功能点，例如自动化处理、账号管理、数据同步等。"],
-      ["使用说明", "这里放操作步骤、注意事项、常见问题。"],
-      ["下载授权", "这里放下载地址、授权方式、购买说明。"]
+  ws40:{
+    title:"微闪4.0安装包/源码",
+    intro:"这里填写微闪4.0的软件介绍、安装说明、源码说明、授权方式和使用教程。",
+    tags:["安装包","源码","使用教程","售后支持"],
+    features:[
+      ["软件介绍","填写微闪4.0的核心用途和适用场景。"],
+      ["安装说明","填写安装步骤、运行环境、注意事项。"],
+      ["源码说明","填写源码结构、开发语言、二开说明。"],
+      ["购买说明","填写授权价格、交付方式、售后规则。"]
     ]
   },
-  ws502: {
-    title: "微闪5.02",
-    intro: "微闪5.02 是微闪系列的升级版本，可在这里单独介绍新版功能和更新内容。",
-    tags: ["新版升级", "功能增强", "性能优化", "独立页面"],
-    features: [
-      ["版本说明", "填写微闪5.02相比4.0新增了什么。"],
-      ["适用范围", "填写这个版本适合哪些用户。"],
-      ["更新日志", "填写修复内容、优化内容。"],
-      ["购买说明", "填写价格、授权、售后规则。"]
+  ws502:{
+    title:"微闪5.02安装包/源码",
+    intro:"这里填写微闪5.02版本介绍、更新内容、安装包和源码交付说明。",
+    tags:["新版升级","安装包","源码","稳定优化"],
+    features:[
+      ["版本说明","填写5.02相比旧版新增和优化内容。"],
+      ["功能亮点","填写主要功能和优势。"],
+      ["源码交付","填写源码包含内容和注意事项。"],
+      ["售后服务","填写维护和技术支持规则。"]
     ]
   },
-  ws602: {
-    title: "微闪6.02",
-    intro: "微闪6.02 产品介绍页面，这里可以放更高级版本的说明、截图和下载入口。",
-    tags: ["高级版本", "稳定优化", "持续维护"],
-    features: [
-      ["核心优势", "填写6.02版本的核心卖点。"],
-      ["功能模块", "填写软件模块介绍。"],
-      ["软件截图", "下方图片区可以放软件界面图。"],
-      ["售后支持", "填写使用帮助和售后方式。"]
+  ws602:{
+    title:"微闪6.02安装包/源码",
+    intro:"这里填写微闪6.02版本介绍，可放产品截图、功能模块和下载入口。",
+    tags:["高级版本","安装包","源码","持续维护"],
+    features:[
+      ["核心优势","填写6.02版本主要卖点。"],
+      ["功能模块","填写软件功能模块。"],
+      ["使用教程","填写操作说明和常见问题。"],
+      ["下载授权","填写下载地址和授权说明。"]
     ]
   },
-  api91: {
-    title: "91 数据API发送控台",
-    intro: "用于数据API发送、接口控制、任务管理等场景，可对接不同接口进行统一操作。",
-    tags: ["API接口", "数据发送", "控制台", "自动化"],
-    features: [
-      ["接口管理", "统一管理API地址、参数、请求方式。"],
-      ["数据发送", "支持批量发送、任务执行、结果记录。"],
-      ["日志记录", "记录每次请求状态，方便排查问题。"],
-      ["权限控制", "可配合授权系统限制使用权限。"]
+  api91:{
+    title:"91数据发送安装包/源码",
+    intro:"这里填写91数据发送控台介绍、接口说明、安装包和源码交付内容。",
+    tags:["数据发送","API接口","安装包","源码"],
+    features:[
+      ["接口管理","填写API地址、请求参数、请求方式等。"],
+      ["数据发送","填写批量发送、任务执行、结果记录。"],
+      ["日志记录","填写请求日志和错误排查方式。"],
+      ["源码说明","填写源码结构和二开注意事项。"]
     ]
   },
-  chaidan: {
-    title: "拆单助手桌面版",
-    intro: "桌面端拆单工具，适合订单拆分、金额分配、规则计算、结果导出等业务。",
-    tags: ["桌面软件", "拆单算法", "数据处理", "结果导出"],
-    features: [
-      ["智能拆单", "根据规则自动拆分订单。"],
-      ["金额分配", "支持不同金额、数量、单位的组合计算。"],
-      ["结果预览", "拆分完成后可预览结果。"],
-      ["导出数据", "支持复制或导出拆单结果。"]
+  chaidan:{
+    title:"拆单助手 - 鼠大侠",
+    intro:"桌面端拆单工具，适合订单拆分、金额分配、规则计算、结果导出等业务。",
+    tags:["桌面软件","拆单算法","数据处理","结果导出"],
+    features:[
+      ["智能拆单","根据规则自动拆分订单。"],
+      ["金额分配","支持不同金额、数量、单位的组合计算。"],
+      ["结果预览","拆分完成后可预览处理结果。"],
+      ["导出数据","支持复制或导出拆单结果。"]
     ]
   },
-  imgconvert: {
-    title: "图片转换器",
-    intro: "支持图片格式转换、批量处理、压缩、尺寸调整等功能。",
-    tags: ["图片处理", "批量转换", "格式转换", "尺寸压缩"],
-    features: [
-      ["格式转换", "支持常见图片格式互转。"],
-      ["批量处理", "一次选择多张图片自动处理。"],
-      ["图片压缩", "减少图片体积，适合上传网站。"],
-      ["尺寸调整", "按指定宽高批量修改。"]
+  imgconvert:{
+    title:"图片转换器 - 鼠大侠",
+    intro:"支持图片格式转换、批量处理、压缩、尺寸调整等功能。",
+    tags:["图片处理","格式转换","批量处理","尺寸调整"],
+    features:[
+      ["格式转换","支持常见图片格式互转。"],
+      ["批量处理","一次选择多张图片自动处理。"],
+      ["图片压缩","减少图片体积，方便上传网站。"],
+      ["尺寸调整","按指定宽高批量修改图片。"]
     ]
   },
-  texttool: {
-    title: "文本去重复",
-    intro: "文本整理工具，可用于批量去重、关键词过滤、数据清洗。",
-    tags: ["文本处理", "批量去重", "数据清洗", "效率工具"],
-    features: [
-      ["批量去重", "快速删除重复文本行。"],
-      ["关键词过滤", "按关键词保留或删除内容。"],
-      ["文本整理", "清理空行、空格、特殊字符。"],
-      ["结果导出", "处理结果可复制或保存。"]
+  texttool:{
+    title:"文本去重复 - 鼠大侠",
+    intro:"文本整理工具，可用于批量去重、关键词过滤、数据清洗。",
+    tags:["文本处理","批量去重","关键词过滤","数据清洗"],
+    features:[
+      ["批量去重","快速删除重复文本行。"],
+      ["关键词过滤","按关键词保留或删除内容。"],
+      ["文本整理","清理空行、空格、特殊字符。"],
+      ["结果导出","处理结果可复制或保存。"]
     ]
   }
 };
@@ -165,36 +322,35 @@ function render(){
     <section class="hero">
       <h1>${data.title}</h1>
       <p>${data.intro}</p>
-      <div style="margin-top:18px">
-        ${data.tags.map(t=>`<span class="badge">${t}</span>`).join("")}
-      </div>
+      <div>${data.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div>
     </section>
 
     <section class="card">
-      <div class="product-head">
+      <div class="card-head">
         <div>
-          <div class="product-title">${data.title}</div>
-          <div class="footer-note">当前页面为独立产品介绍页，可单独修改文字、图片、按钮和下载地址。</div>
+          <div class="card-title">${data.title}</div>
+          <div class="card-desc">当前为独立产品介绍页面，可单独修改文字、图片、按钮和下载地址。</div>
         </div>
-        <a class="btn" href="#">立即了解</a>
+        <button class="ant-btn ant-btn-default">立即了解</button>
       </div>
 
       <div class="grid">
         ${data.features.map(f=>`
-          <div class="item">
+          <div class="feature">
             <h3>${f[0]}</h3>
             <p>${f[1]}</p>
           </div>
         `).join("")}
       </div>
 
-      <div class="imgbox">
+      <div class="image-box">
         这里放 ${data.title} 的产品截图 / 宣传图 / 使用教程图
       </div>
 
-      <div class="btns">
-        <a class="btn" href="#">下载软件</a>
-        <a class="btn gray" href="#">查看教程</a>
+      <div class="btn-group">
+        <button class="ant-btn ant-btn-default">下载安装包</button>
+        <button class="ant-btn ant-btn-default">源码说明</button>
+        <button class="ant-btn ant-btn-default">使用教程</button>
       </div>
     </section>
   `;
