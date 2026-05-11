@@ -1,122 +1,207 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>鼠大侠 - 尊享服务</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/antd@4.24.16/dist/antd.min.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#fff;color:#1f2937}
-.header{height:64px;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;padding:0 30px;background:#fff;position:fixed;top:0;left:0;right:0;z-index:99}
-.logo{font-size:22px;font-weight:700;color:#0f766e}
-.sub{font-size:13px;color:#64748b;margin-left:18px}
+body{margin:0;background:#f3f6f9;color:#1f2937;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial}
+.top{height:64px;background:#fff;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;padding:0 36px;position:fixed;top:0;left:0;right:0;z-index:10}
+.logo{font-size:24px;font-weight:800;color:#0f766e;margin-right:24px}
+.desc{color:#64748b}
 .layout{display:flex;padding-top:64px}
-.sidebar{width:260px;height:calc(100vh - 64px);border-right:1px solid #e5e7eb;background:#fafafa;position:fixed;left:0;top:64px;padding:24px 0;overflow:auto}
-.menu-title{font-size:16px;font-weight:700;padding:0 24px 14px;color:#0f172a}
-.menu a{display:block;padding:13px 26px;color:#334155;text-decoration:none;font-size:15px;border-left:4px solid transparent}
-.menu a:hover,.menu a.active{background:#ecfeff;color:#0891b2;border-left-color:#06b6d4;font-weight:600}
-.main{margin-left:260px;width:calc(100% - 260px);padding:38px 60px}
-.hero{padding:35px 0 45px;border-bottom:1px solid #e5e7eb}
-.hero h1{font-size:34px;color:#0f172a;margin-bottom:16px}
-.hero p{font-size:16px;color:#475569;line-height:1.9;max-width:980px}
-.card{margin-top:34px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:32px;box-shadow:0 8px 25px rgba(15,23,42,.04)}
-.card h2{font-size:26px;color:#0f172a;margin-bottom:14px}
-.card p{font-size:15px;color:#475569;line-height:1.9}
-.tagbox{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px}
-.tag{background:#f0fdfa;color:#0f766e;border:1px solid #99f6e4;padding:7px 12px;border-radius:20px;font-size:13px}
-.imgbox{margin-top:24px;border:1px dashed #cbd5e1;border-radius:10px;padding:40px;text-align:center;color:#94a3b8;background:#f8fafc}
+.side{width:260px;background:#fff;border-right:1px solid #e5e7eb;height:calc(100vh - 64px);position:fixed;left:0;top:64px;padding:18px 0}
+.side-title{font-weight:700;padding:0 24px 14px;color:#0f172a}
+.menu a{display:block;padding:13px 24px;color:#334155;text-decoration:none;border-left:4px solid transparent}
+.menu a:hover,.menu a.active{background:#e6fffb;color:#08979c;border-left-color:#13c2c2;font-weight:600}
+.main{margin-left:260px;padding:34px 48px;width:calc(100% - 260px)}
+.hero{background:linear-gradient(120deg,#e6fffb,#ffffff);border-radius:16px;padding:42px;border:1px solid #d9f7be;margin-bottom:24px}
+.hero h1{font-size:34px;font-weight:800;margin-bottom:14px;color:#0f172a}
+.hero p{font-size:16px;line-height:1.9;color:#475569;max-width:900px}
+.card{background:#fff;border-radius:14px;padding:30px;border:1px solid #e5e7eb;box-shadow:0 8px 24px rgba(15,23,42,.04)}
+.product-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #f0f0f0;padding-bottom:20px;margin-bottom:24px}
+.product-title{font-size:30px;font-weight:800;color:#0f172a}
+.badge{background:#e6fffb;color:#08979c;border:1px solid #87e8de;padding:5px 12px;border-radius:20px;margin-right:8px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:24px}
+.item{background:#fafafa;border:1px solid #f0f0f0;border-radius:12px;padding:22px}
+.item h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.item p{color:#64748b;line-height:1.8}
+.imgbox{height:230px;background:#f8fafc;border:1px dashed #cbd5e1;border-radius:12px;margin-top:24px;display:flex;align-items:center;justify-content:center;color:#94a3b8}
 .btns{margin-top:24px}
-.btn{display:inline-block;padding:10px 18px;background:#0f766e;color:#fff;text-decoration:none;border-radius:8px;margin-right:10px}
+.btn{display:inline-block;background:#13c2c2;color:white;padding:10px 22px;border-radius:6px;text-decoration:none;margin-right:12px}
+.btn:hover{color:white;background:#08979c}
 .btn.gray{background:#64748b}
+.footer-note{margin-top:20px;color:#94a3b8}
+@media(max-width:900px){.side{display:none}.main{margin-left:0;width:100%;padding:24px}.grid{grid-template-columns:1fr}.top{padding:0 18px}.desc{display:none}}
 </style>
 </head>
 <body>
 
-<div class="header">
+<div class="top">
   <div class="logo">鼠大侠 - 尊享服务</div>
-  <div class="sub">全栈开发工程师 · 软件开发 · 网站二开 · 自动化工具 · 授权系统</div>
+  <div class="desc">全栈开发工程师 · 软件开发 · 网站二开 · 自动化工具 · 授权系统</div>
 </div>
 
 <div class="layout">
-  <aside class="sidebar">
-    <div class="menu-title">产品文档目录</div>
-    <nav class="menu">
-      <a href="#home" class="active">首页简介</a>
+  <aside class="side">
+    <div class="side-title">产品文档目录</div>
+    <nav class="menu" id="menu">
+      <a href="#home">首页简介</a>
       <a href="#ws40">微闪4.0</a>
       <a href="#ws502">微闪5.02</a>
       <a href="#ws602">微闪6.02</a>
       <a href="#api91">91 数据API发送控台</a>
-      <a href="#split">拆单助手桌面版</a>
-      <a href="#imgtool">图片转换器</a>
+      <a href="#chaidan">拆单助手桌面版</a>
+      <a href="#imgconvert">图片转换器</a>
       <a href="#texttool">文本去重复</a>
     </nav>
   </aside>
 
-  <main class="main">
-    <section id="home" class="hero page">
-      <h1>鼠大侠 - 尊享服务</h1>
-      <p>
-        全栈开发工程师 | 承接安卓APP定制、PC桌面软件开发、网站二开及系统集成。
-        精通易语言、C#、Kotlin、PHP，专注于自动化工具与软件授权系统解决方案。
-      </p>
-    </section>
-
-    <section id="ws40" class="card page">
-      <h2>微闪4.0</h2>
-      <p>这里填写微闪4.0的软件介绍、功能说明、更新内容、使用教程、购买说明等。</p>
-      <div class="tagbox">
-        <span class="tag">安卓支持</span><span class="tag">稳定运行</span><span class="tag">授权验证</span>
-      </div>
-      <div class="imgbox">这里可以放产品截图 / 使用教程图片</div>
-      <div class="btns"><a class="btn" href="#">下载软件</a><a class="btn gray" href="#">查看教程</a></div>
-    </section>
-
-    <section id="ws502" class="card page">
-      <h2>微闪5.02</h2>
-      <p>这里填写微闪5.02介绍内容，可放文字、图片、按钮、下载地址。</p>
-      <div class="imgbox">产品图片区域</div>
-    </section>
-
-    <section id="ws602" class="card page">
-      <h2>微闪6.02</h2>
-      <p>这里填写微闪6.02介绍内容。</p>
-      <div class="imgbox">产品截图区域</div>
-    </section>
-
-    <section id="api91" class="card page">
-      <h2>91 数据API发送控台</h2>
-      <p>这里填写API发送控台说明，例如接口功能、使用场景、参数说明、对接方式。</p>
-      <div class="tagbox">
-        <span class="tag">API接口</span><span class="tag">数据发送</span><span class="tag">控制台管理</span>
-      </div>
-    </section>
-
-    <section id="split" class="card page">
-      <h2>拆单助手桌面版</h2>
-      <p>这里填写拆单助手功能介绍，例如自动拆单、金额分配、规则算法、导出结果。</p>
-      <div class="imgbox">软件界面截图</div>
-    </section>
-
-    <section id="imgtool" class="card page">
-      <h2>图片转换器</h2>
-      <p>这里填写图片转换器介绍，例如格式转换、批量处理、压缩、尺寸调整。</p>
-    </section>
-
-    <section id="texttool" class="card page">
-      <h2>文本去重复</h2>
-      <p>这里填写文本去重复工具介绍，例如批量去重、关键词过滤、文本整理。</p>
-    </section>
-  </main>
+  <main class="main" id="app"></main>
 </div>
 
 <script>
-const links = document.querySelectorAll(".menu a");
-links.forEach(link=>{
-  link.onclick=function(){
-    links.forEach(a=>a.classList.remove("active"));
-    this.classList.add("active");
+const pages = {
+  home: {
+    title: "鼠大侠 - 尊享服务",
+    intro: "全栈开发工程师 | 承接安卓APP定制、PC桌面软件开发、网站二开及系统集成。精通易语言、C#、Kotlin、PHP，专注于自动化工具与软件授权系统解决方案。",
+    tags: ["安卓APP定制", "PC桌面软件", "网站二开", "系统集成"],
+    features: [
+      ["全栈开发", "从前端页面、后台接口、数据库到客户端软件，提供完整开发方案。"],
+      ["软件授权系统", "支持卡密、账号、机器码、心跳检测、在线状态、黑名单等功能。"],
+      ["自动化工具", "根据业务流程定制自动化软件，提高效率，减少人工操作。"],
+      ["长期维护", "可按需求持续升级功能、修复问题、优化体验。"]
+    ]
+  },
+  ws40: {
+    title: "微闪4.0",
+    intro: "微闪4.0 是一款面向指定场景的工具软件，主打稳定、易用、高效，适合日常自动化辅助使用。",
+    tags: ["稳定运行", "简单易用", "授权验证", "教程支持"],
+    features: [
+      ["软件介绍", "这里填写微闪4.0的核心功能、适用人群、使用场景。"],
+      ["功能亮点", "这里写主要功能点，例如自动化处理、账号管理、数据同步等。"],
+      ["使用说明", "这里放操作步骤、注意事项、常见问题。"],
+      ["下载授权", "这里放下载地址、授权方式、购买说明。"]
+    ]
+  },
+  ws502: {
+    title: "微闪5.02",
+    intro: "微闪5.02 是微闪系列的升级版本，可在这里单独介绍新版功能和更新内容。",
+    tags: ["新版升级", "功能增强", "性能优化", "独立页面"],
+    features: [
+      ["版本说明", "填写微闪5.02相比4.0新增了什么。"],
+      ["适用范围", "填写这个版本适合哪些用户。"],
+      ["更新日志", "填写修复内容、优化内容。"],
+      ["购买说明", "填写价格、授权、售后规则。"]
+    ]
+  },
+  ws602: {
+    title: "微闪6.02",
+    intro: "微闪6.02 产品介绍页面，这里可以放更高级版本的说明、截图和下载入口。",
+    tags: ["高级版本", "稳定优化", "持续维护"],
+    features: [
+      ["核心优势", "填写6.02版本的核心卖点。"],
+      ["功能模块", "填写软件模块介绍。"],
+      ["软件截图", "下方图片区可以放软件界面图。"],
+      ["售后支持", "填写使用帮助和售后方式。"]
+    ]
+  },
+  api91: {
+    title: "91 数据API发送控台",
+    intro: "用于数据API发送、接口控制、任务管理等场景，可对接不同接口进行统一操作。",
+    tags: ["API接口", "数据发送", "控制台", "自动化"],
+    features: [
+      ["接口管理", "统一管理API地址、参数、请求方式。"],
+      ["数据发送", "支持批量发送、任务执行、结果记录。"],
+      ["日志记录", "记录每次请求状态，方便排查问题。"],
+      ["权限控制", "可配合授权系统限制使用权限。"]
+    ]
+  },
+  chaidan: {
+    title: "拆单助手桌面版",
+    intro: "桌面端拆单工具，适合订单拆分、金额分配、规则计算、结果导出等业务。",
+    tags: ["桌面软件", "拆单算法", "数据处理", "结果导出"],
+    features: [
+      ["智能拆单", "根据规则自动拆分订单。"],
+      ["金额分配", "支持不同金额、数量、单位的组合计算。"],
+      ["结果预览", "拆分完成后可预览结果。"],
+      ["导出数据", "支持复制或导出拆单结果。"]
+    ]
+  },
+  imgconvert: {
+    title: "图片转换器",
+    intro: "支持图片格式转换、批量处理、压缩、尺寸调整等功能。",
+    tags: ["图片处理", "批量转换", "格式转换", "尺寸压缩"],
+    features: [
+      ["格式转换", "支持常见图片格式互转。"],
+      ["批量处理", "一次选择多张图片自动处理。"],
+      ["图片压缩", "减少图片体积，适合上传网站。"],
+      ["尺寸调整", "按指定宽高批量修改。"]
+    ]
+  },
+  texttool: {
+    title: "文本去重复",
+    intro: "文本整理工具，可用于批量去重、关键词过滤、数据清洗。",
+    tags: ["文本处理", "批量去重", "数据清洗", "效率工具"],
+    features: [
+      ["批量去重", "快速删除重复文本行。"],
+      ["关键词过滤", "按关键词保留或删除内容。"],
+      ["文本整理", "清理空行、空格、特殊字符。"],
+      ["结果导出", "处理结果可复制或保存。"]
+    ]
   }
-});
+};
+
+function render(){
+  const key = location.hash.replace("#","") || "home";
+  const data = pages[key] || pages.home;
+
+  document.querySelectorAll("#menu a").forEach(a=>{
+    a.classList.toggle("active", a.getAttribute("href") === "#" + key);
+  });
+
+  document.getElementById("app").innerHTML = `
+    <section class="hero">
+      <h1>${data.title}</h1>
+      <p>${data.intro}</p>
+      <div style="margin-top:18px">
+        ${data.tags.map(t=>`<span class="badge">${t}</span>`).join("")}
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="product-head">
+        <div>
+          <div class="product-title">${data.title}</div>
+          <div class="footer-note">当前页面为独立产品介绍页，可单独修改文字、图片、按钮和下载地址。</div>
+        </div>
+        <a class="btn" href="#">立即了解</a>
+      </div>
+
+      <div class="grid">
+        ${data.features.map(f=>`
+          <div class="item">
+            <h3>${f[0]}</h3>
+            <p>${f[1]}</p>
+          </div>
+        `).join("")}
+      </div>
+
+      <div class="imgbox">
+        这里放 ${data.title} 的产品截图 / 宣传图 / 使用教程图
+      </div>
+
+      <div class="btns">
+        <a class="btn" href="#">下载软件</a>
+        <a class="btn gray" href="#">查看教程</a>
+      </div>
+    </section>
+  `;
+}
+
+window.addEventListener("hashchange", render);
+render();
 </script>
 
 </body>
