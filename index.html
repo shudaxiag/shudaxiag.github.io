@@ -1,13 +1,123 @@
-* **🏠 个人简介**
-  * [关于我](README.md)
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鼠大侠 - 尊享服务</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#fff;color:#1f2937}
+.header{height:64px;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;padding:0 30px;background:#fff;position:fixed;top:0;left:0;right:0;z-index:99}
+.logo{font-size:22px;font-weight:700;color:#0f766e}
+.sub{font-size:13px;color:#64748b;margin-left:18px}
+.layout{display:flex;padding-top:64px}
+.sidebar{width:260px;height:calc(100vh - 64px);border-right:1px solid #e5e7eb;background:#fafafa;position:fixed;left:0;top:64px;padding:24px 0;overflow:auto}
+.menu-title{font-size:16px;font-weight:700;padding:0 24px 14px;color:#0f172a}
+.menu a{display:block;padding:13px 26px;color:#334155;text-decoration:none;font-size:15px;border-left:4px solid transparent}
+.menu a:hover,.menu a.active{background:#ecfeff;color:#0891b2;border-left-color:#06b6d4;font-weight:600}
+.main{margin-left:260px;width:calc(100% - 260px);padding:38px 60px}
+.hero{padding:35px 0 45px;border-bottom:1px solid #e5e7eb}
+.hero h1{font-size:34px;color:#0f172a;margin-bottom:16px}
+.hero p{font-size:16px;color:#475569;line-height:1.9;max-width:980px}
+.card{margin-top:34px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:32px;box-shadow:0 8px 25px rgba(15,23,42,.04)}
+.card h2{font-size:26px;color:#0f172a;margin-bottom:14px}
+.card p{font-size:15px;color:#475569;line-height:1.9}
+.tagbox{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px}
+.tag{background:#f0fdfa;color:#0f766e;border:1px solid #99f6e4;padding:7px 12px;border-radius:20px;font-size:13px}
+.imgbox{margin-top:24px;border:1px dashed #cbd5e1;border-radius:10px;padding:40px;text-align:center;color:#94a3b8;background:#f8fafc}
+.btns{margin-top:24px}
+.btn{display:inline-block;padding:10px 18px;background:#0f766e;color:#fff;text-decoration:none;border-radius:8px;margin-right:10px}
+.btn.gray{background:#64748b}
+</style>
+</head>
+<body>
 
-* **🚀 核心产品**
-  * [微闪 4.0](ws40.md)
-  * [微闪 5.02](ws502.md)
-  * [微闪 6.02](ws602.md)
+<div class="header">
+  <div class="logo">鼠大侠 - 尊享服务</div>
+  <div class="sub">全栈开发工程师 · 软件开发 · 网站二开 · 自动化工具 · 授权系统</div>
+</div>
 
-* **💻 实用工具**
-  * [91 数据API发送控台](api_control.md)
-  * [拆单助手桌面版](chaidan.md)
-  * [图片转换器](img_convert.md)
-  * [文本去重复](text_tool.md)
+<div class="layout">
+  <aside class="sidebar">
+    <div class="menu-title">产品文档目录</div>
+    <nav class="menu">
+      <a href="#home" class="active">首页简介</a>
+      <a href="#ws40">微闪4.0</a>
+      <a href="#ws502">微闪5.02</a>
+      <a href="#ws602">微闪6.02</a>
+      <a href="#api91">91 数据API发送控台</a>
+      <a href="#split">拆单助手桌面版</a>
+      <a href="#imgtool">图片转换器</a>
+      <a href="#texttool">文本去重复</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <section id="home" class="hero page">
+      <h1>鼠大侠 - 尊享服务</h1>
+      <p>
+        全栈开发工程师 | 承接安卓APP定制、PC桌面软件开发、网站二开及系统集成。
+        精通易语言、C#、Kotlin、PHP，专注于自动化工具与软件授权系统解决方案。
+      </p>
+    </section>
+
+    <section id="ws40" class="card page">
+      <h2>微闪4.0</h2>
+      <p>这里填写微闪4.0的软件介绍、功能说明、更新内容、使用教程、购买说明等。</p>
+      <div class="tagbox">
+        <span class="tag">安卓支持</span><span class="tag">稳定运行</span><span class="tag">授权验证</span>
+      </div>
+      <div class="imgbox">这里可以放产品截图 / 使用教程图片</div>
+      <div class="btns"><a class="btn" href="#">下载软件</a><a class="btn gray" href="#">查看教程</a></div>
+    </section>
+
+    <section id="ws502" class="card page">
+      <h2>微闪5.02</h2>
+      <p>这里填写微闪5.02介绍内容，可放文字、图片、按钮、下载地址。</p>
+      <div class="imgbox">产品图片区域</div>
+    </section>
+
+    <section id="ws602" class="card page">
+      <h2>微闪6.02</h2>
+      <p>这里填写微闪6.02介绍内容。</p>
+      <div class="imgbox">产品截图区域</div>
+    </section>
+
+    <section id="api91" class="card page">
+      <h2>91 数据API发送控台</h2>
+      <p>这里填写API发送控台说明，例如接口功能、使用场景、参数说明、对接方式。</p>
+      <div class="tagbox">
+        <span class="tag">API接口</span><span class="tag">数据发送</span><span class="tag">控制台管理</span>
+      </div>
+    </section>
+
+    <section id="split" class="card page">
+      <h2>拆单助手桌面版</h2>
+      <p>这里填写拆单助手功能介绍，例如自动拆单、金额分配、规则算法、导出结果。</p>
+      <div class="imgbox">软件界面截图</div>
+    </section>
+
+    <section id="imgtool" class="card page">
+      <h2>图片转换器</h2>
+      <p>这里填写图片转换器介绍，例如格式转换、批量处理、压缩、尺寸调整。</p>
+    </section>
+
+    <section id="texttool" class="card page">
+      <h2>文本去重复</h2>
+      <p>这里填写文本去重复工具介绍，例如批量去重、关键词过滤、文本整理。</p>
+    </section>
+  </main>
+</div>
+
+<script>
+const links = document.querySelectorAll(".menu a");
+links.forEach(link=>{
+  link.onclick=function(){
+    links.forEach(a=>a.classList.remove("active"));
+    this.classList.add("active");
+  }
+});
+</script>
+
+</body>
+</html>
