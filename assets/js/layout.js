@@ -1,7 +1,7 @@
 
 document.body.insertAdjacentHTML("afterbegin", `
 <div class="header">
-    <div class="logo">鼠大侠 - 尊享服务</div>
+    <div class="logo">鼠大侠 - Hello啊</div>
     <div class="header-desc">
         全栈开发工程师 · 软件开发 · 网站二开 · 自动化工具 · 授权系统
     </div>
