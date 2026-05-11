@@ -1,3 +1,4 @@
+
 document.body.insertAdjacentHTML("afterbegin", `
 <div class="header">
     <div class="logo">鼠大侠 - 尊享服务</div>
