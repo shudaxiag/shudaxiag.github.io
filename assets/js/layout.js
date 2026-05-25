@@ -10,12 +10,19 @@ document.body.insertAdjacentHTML("afterbegin", `
     <div class="menu-title">产品文档目录</div>
 
     <div class="menu">
-        <a href="/pages/home/">首页简介</a>
+        <a href="/index.html">首页简介</a>
+
         <a href="/pages/ws40/">微闪4.0安装包/源码</a>
         <a href="/pages/ws502/">微闪5.02安装包/源码</a>
         <a href="/pages/ws602/">微闪6.02安装包/源码</a>
+
         <a href="/pages/api91/">91数据发送安装包/源码</a>
+
         <a href="/pages/chaidan/">拆单助手 - 鼠大侠</a>
+
+        <!-- 👇 新增的 -->
+        <a href="/pages/chaidan2/">49统计拆单 2.0.0.5</a>
+
         <a href="/pages/imgconvert/">图片转换器 - 鼠大侠</a>
         <a href="/pages/texttool/">文本去重复 - 鼠大侠</a>
     </div>
@@ -23,7 +30,7 @@ document.body.insertAdjacentHTML("afterbegin", `
 `);
 
 document.querySelectorAll(".menu a").forEach(link => {
-    if(location.pathname === link.getAttribute("href")){
+    if(location.pathname.startsWith(link.getAttribute("href"))){
         link.classList.add("active");
     }
 });
