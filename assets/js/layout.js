@@ -19,9 +19,9 @@ document.body.insertAdjacentHTML("afterbegin", `
         <a href="/pages/api91/">91数据发送安装包/源码</a>
 
         <a href="/pages/chaidan/">拆单助手 - 鼠大侠</a>
-
-        <!-- 👇 新增的 -->
         <a href="/pages/chaidan2/">49统计拆单 2.0.0.5</a>
+
+        <a href="/pages/weixinmoniqi/">三方微信修改器</a>
 
         <a href="/pages/imgconvert/">图片转换器 - 鼠大侠</a>
         <a href="/pages/texttool/">文本去重复 - 鼠大侠</a>
@@ -30,7 +30,12 @@ document.body.insertAdjacentHTML("afterbegin", `
 `);
 
 document.querySelectorAll(".menu a").forEach(link => {
-    if(location.pathname.startsWith(link.getAttribute("href"))){
+    const href = link.getAttribute("href");
+
+    if (
+        location.pathname === href ||
+        location.pathname.startsWith(href)
+    ) {
         link.classList.add("active");
     }
 });
