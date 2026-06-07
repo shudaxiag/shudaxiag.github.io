@@ -23,6 +23,8 @@ document.body.insertAdjacentHTML("afterbegin", `
 
         <a href="/pages/weixinmoniqi/">三方微信修改器</a>
 
+        <a href="/pages/kuaidibiaoqianguanjia/">快递标签管家</a>
+
         <a href="/pages/imgconvert/">图片转换器 - 鼠大侠</a>
         <a href="/pages/texttool/">文本去重复 - 鼠大侠</a>
     </div>
