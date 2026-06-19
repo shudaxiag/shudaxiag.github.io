@@ -29,7 +29,7 @@ document.body.insertAdjacentHTML("afterbegin", `
         <a href="/pages/texttool/">文本去重复 - 鼠大侠</a>
 
         <!-- 🆕 新增 -->
-        <a href="/pages/xiaobailongjiake/">小白龙通用加壳 - v1.4.0.0</a>
+        <a href="/pages/jiakejiami/">小白龙通用加壳 - v1.4.0.0</a>
     </div>
 </div>
 `);
