@@ -48,7 +48,7 @@ document.body.insertAdjacentHTML("afterbegin", `
         </a>
 
 
-        <a href="/pages/kof97/">
+        <a href="/pages/quanhuang97/">
             拳皇97辅助
         </a>
 
